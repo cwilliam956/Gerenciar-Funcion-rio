@@ -3,6 +3,10 @@ Código Java para um sistema de gerenciamento de funcionários. O sistema possui
 
 # Integrantes 
 Celso William 
+
 Carlos Eduraro 
+
 Gustavo Brianti 
+
 Mateuis Strigueti 
+
