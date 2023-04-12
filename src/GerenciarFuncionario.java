@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class GerenciarFuncionario {
     public List<Funcionario> funcionarios = new ArrayList<>();
     public Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         GerenciarFuncionario gerenciarFuncionario = new GerenciarFuncionario();
         int opcao;
@@ -44,6 +45,7 @@ public class GerenciarFuncionario {
             }
         } while (opcao != 9);
     }
+
     public void execConsultar() {
         int opcao;
 
@@ -78,9 +80,6 @@ public class GerenciarFuncionario {
     }
 
     public void execCadastrar() {
-        System.out.println("Para cadastrar digite os dados do Funcionário");
-        System.out.println("==========================================");
-
         System.out.println("Digite o número de registro: ");
         long registro = Long.parseLong(sc.nextLine());
 
@@ -101,13 +100,11 @@ public class GerenciarFuncionario {
         funcionarios.add(funcionario);
 
         System.out.println("Funcionário cadastrado com sucesso");
-        System.out.println(funcionario);
+        System.out.println(funcionario.getNome());
     }
 
     public void execAtivarDesativar() {
-        System.out.println("Para Ativar/Desativar um funcionário digite o registro do funcionário: ");
-        System.out.println("=================================================");
-
+        System.out.println("Digite o registro do funcionário: ");
         long registro = Long.parseLong(sc.nextLine());
 
         Funcionario funcionario = buscarFuncionario(registro);
@@ -124,14 +121,12 @@ public class GerenciarFuncionario {
 
         if (opcao.toLowerCase().equals("s")) {
             funcionario.setEstaAtivo(!funcionario.Ativo());
-            System.out.println("Estado do funcionário foi alterado");
-            System.out.println(funcionario);
+            System.out.println(funcionario.getNome() + ", seu estado foi alterado para Ativo.");
+
         }
     }
 
     public void execExibirSaldo() {
-        System.out.println("========EXIBIR SALDO========");
-
         System.out.println("Digite o registro do funcionário: ");
         long registro = Long.parseLong(sc.nextLine());
 
@@ -156,7 +151,7 @@ public class GerenciarFuncionario {
             return;
         }
 
-        System.out.println(funcionario);
+        System.out.println(funcionario.getNome());
     }
 
     private Funcionario buscarFuncionario(long registro) {
@@ -185,7 +180,7 @@ public class GerenciarFuncionario {
         if (funcionario.Ativo()) {
             funcionario.bonificar(salario);
 
-            System.out.println("Funcionário: " + funcionario);
+            System.out.println("Funcionário: " + funcionario.getNome());
             System.out.println("Foi bonificado com sucesso no valor de " + salario);
             return;
         }
@@ -204,5 +199,6 @@ public class GerenciarFuncionario {
 
         System.out.println("Funcionários bonificados com sucesso.");
         System.out.println("Valor da bonificação: " + salario);
+        return;
     }
 }
