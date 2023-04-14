@@ -4,7 +4,7 @@ Trabalho passado em aula na Universidade FATEC - Itapira. O código Java para um
 # Integrantes 
 Celso William 
 
-Carlos Eduraro 
+Carlos Edurdo
 
 Gustavo Brianti 
 
